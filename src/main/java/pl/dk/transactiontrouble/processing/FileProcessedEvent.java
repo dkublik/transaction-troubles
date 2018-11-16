@@ -8,7 +8,7 @@ public class FileProcessedEvent extends ApplicationEvent {
 
     private Long linesProcessed;
 
-    public FileProcessedEvent(Object source, String fileName, Long linesProcessed) {
+    FileProcessedEvent(Object source, String fileName, Long linesProcessed) {
         super(source);
         this.fileName = fileName;
         this.linesProcessed = linesProcessed;

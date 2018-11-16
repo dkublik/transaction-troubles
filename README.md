@@ -6,9 +6,9 @@ code example for https://dkublik.github.io/transaction%20troubles/
 
 ## Requirements
 
-* Java 8
+* Java 11
 
-* Gradle 2.7
+* Gradle 4.10.2
 
 ## To run
 import to your favorite IDE and lunch Application.java  

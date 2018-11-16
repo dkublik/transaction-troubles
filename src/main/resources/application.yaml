@@ -5,7 +5,12 @@ spring:
     username: sa
     password:
     driver: org.h2.Driver
+  h2:
+    console:
+        enabled: true
+        path: /console
   jpa:
     hibernate:
       ddl-auto: create
+      generate-ddl: true
 

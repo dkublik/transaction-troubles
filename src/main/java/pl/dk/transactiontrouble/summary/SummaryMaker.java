@@ -1,6 +1,5 @@
 package pl.dk.transactiontrouble.summary;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;

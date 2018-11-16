@@ -2,11 +2,10 @@ package pl.dk.transactiontrouble.processing;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.dk.transactiontrouble.base.EventPublisher;
-
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @RestController
 @RequestMapping(value = "/")
@@ -19,7 +18,7 @@ class ProcessController {
     @Autowired
     private EventPublisher eventPublisher;
     
-    @RequestMapping(method = GET, produces = "application/json")
+    @GetMapping
     @Transactional
     public String processFile() {
         // do some processing

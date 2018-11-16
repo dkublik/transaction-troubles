@@ -1,59 +1,41 @@
-apply plugin: 'groovy'
-apply plugin: 'spring-boot'
-
 buildscript {
+    ext {
+        springBootVersion = '2.1.0.RELEASE'
+    }
     repositories {
-        mavenLocal()
-        jcenter()
         mavenCentral()
-        maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.6.RELEASE"
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
 
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 group = 'pl.dk'
-version = 0.1
-
-sourceCompatibility = '1.8'
-
-configurations {
-    all {
-        resolutionStrategy {
-            eachDependency { DependencyResolveDetails details ->
-                if(details.requested.group == 'org.springframework') {
-                    details.useTarget([group: details.requested.group, name: details.requested.name, version: "${springVersion}"])
-                }
-            }
-        }
-    }
-}
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 11
 
 repositories {
-    mavenLocal()
-    jcenter()
     mavenCentral()
 }
 
 dependencies {
-    compile "org.springframework.boot:spring-boot-starter-web"
-    compile "org.springframework.boot:spring-boot-starter-actuator"
-    compile "org.springframework.boot:spring-boot-starter-data-jpa"
-    compile "org.springframework:spring-context-support"
-    // for logback.groovy
-    compile "org.codehaus.groovy:groovy-all:2.4.3"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation "org.springframework:spring-context-support"
 
-    compile "org.aspectj:aspectjrt"
-    compile 'com.h2database:h2'
+    implementation "org.aspectj:aspectjrt"
+    implementation 'com.h2database:h2'
 
-    runtime 'cglib:cglib-nodep:3.1'
-    runtime 'org.aspectj:aspectjweaver'
-
+    implementation 'cglib:cglib-nodep:3.2.9'
+    implementation 'org.aspectj:aspectjweaver'
 }
 
 wrapper {
-    gradleVersion '2.7'
+    gradleVersion '4.10.2'
 }
 

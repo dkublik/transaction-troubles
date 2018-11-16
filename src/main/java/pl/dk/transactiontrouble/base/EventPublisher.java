@@ -1,6 +1,5 @@
 package pl.dk.transactiontrouble.base;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationEventPublisher;
