@@ -1,7 +1,7 @@
 Transaction Troubles
 ===============
 
-code example for https://dkublik.github.io/transaction%20troubles/
+code example for https://dkublik.github.io/2015/09/24/transaction-troubles.html
 
 
 ## Requirements
